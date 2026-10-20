@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o seu Perfil Psicológico</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 16px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #f5f3ff);
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4338ca;
+            margin-bottom: 12px;
+        }
+
+        .intro {
+            text-align: center;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #3730a3;
+            margin-top: 28px;
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        label,
+        .question-title {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        fieldset {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 20px 0;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 6px;
+        }
+
+        .option {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .option input {
+            margin-top: 3px;
+        }
+
+        .privacy {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 25px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 14px;
+            font-weight: normal;
+        }
+
+        .consent input {
+            margin-top: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 24px;
+            border: none;
+            border-radius: 10px;
+            background: #4f46e5;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        #resultado {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #eef2ff;
+            border-left: 5px solid #4f46e5;
+            line-height: 1.7;
+        }
+
+        .nota {
+            color: #4b5563;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 28px;
+            text-align: center;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Descubra o seu Perfil Psicológico</h1>
+
+        <p class="intro">
+            Responda a cinco perguntas sobre a sua forma de pensar,
+            comunicar e enfrentar desafios. Descubra qual dos quatro
+            perfis ilustrativos mais se aproxima das suas respostas.
+        </p>
+
+        <form id="teste">
+
+            <h2>Os seus dados</h2>
+
+            <div class="field">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome"
+                       autocomplete="name" required>
+            </div>
+
+            <div class="field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email"
+                       autocomplete="email" required>
+            </div>
+
+            <div class="field">
+                <label for="nascimento">Data de nascimento</label>
+                <input type="date" id="nascimento" name="nascimento"
+                       required>
+            </div>
+
+            <p class="nota">
+                Estes campos são utilizados apenas para demonstrar
+                um formulário. Os dados não são enviados nem guardados.
+            </p>
+
+            <h2>O seu perfil</h2>
+
+            <fieldset>
+                <legend>1. Como prefere passar o seu tempo livre?</legend>
+
+                <label class="option">
+                    <input type="radio" name="p1" value="A" required>
+                    A explorar ideias e aprender coisas novas
+                </label>
+                <label class="option">
+                    <input type="radio" name="p1" value="B">
+                    Com amigos e outras pessoas
+                </label>
+                <label class="option">
+                    <input type="radio" name="p1" value="C">
+                    A organizar projetos e cumprir objetivos
+                </label>
+                <label class="option">
+                    <input type="radio" name="p1" value="D">
+                    A relaxar e desfrutar de momentos tranquilos
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Como reage perante um problema inesperado?</legend>
+
+                <label class="option">
+                    <input type="radio" name="p2" value="A" required>
+                    Analiso todas as possibilidades
+                </label>
+                <label class="option">
+                    <input type="radio" name="p2" value="B">
+                    Peço opiniões e converso com alguém
+                </label>
+                <label class="option">
+                    <input type="radio" name="p2" value="C">
+                    Elaboro rapidamente um plano de ação
+                </label>
+                <label class="option">
+                    <input type="radio" name="p2" value="D">
+                    Mantenho a calma e adapto-me
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>3. Qual destas características o descreve melhor?</legend>
+
+                <label class="option">
+                    <input type="radio" name="p3" value="A" required>
+                    Curioso e analítico
+                </label>
+                <label class="option">
+                    <input type="radio" name="p3" value="B">
+                    Comunicativo e sociável
+                </label>
+                <label class="option">
+                    <input type="radio" name="p3" value="C">
+                    Organizado e determinado
+                </label>
+                <label class="option">
+                    <input type="radio" name="p3" value="D">
+                    Calmo e reflexivo
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. Como prefere trabalhar?</legend>
+
+                <label class="option">
+                    <input type="radio" name="p4" value="A" required>
+                    De forma independente, a investigar
+                </label>
+                <label class="option">
+                    <input type="radio" name="p4" value="B">
+                    Em equipa, a partilhar ideias
+                </label>
+                <label class="option">
+                    <input type="radio" name="p4" value="C">
+                    Com objetivos e etapas bem definidos
+                </label>
+                <label class="option">
+                    <input type="radio" name="p4" value="D">
+                    Num ambiente flexível e sem pressão excessiva
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>5. O que mais valoriza numa decisão?</legend>
+
+                <label class="option">
+                    <input type="radio" name="p5" value="A" required>
+                    A lógica e as evidências
+                </label>
+                <label class="option">
+                    <input type="radio" name="p5" value="B">
+                    As pessoas e os seus sentimentos
+                </label>
+                <label class="option">
+                    <input type="radio" name="p5" value="C">
+                    A eficiência e os resultados
+                </label>
+                <label class="option">
+                    <input type="radio" name="p5" value="D">
+                    O equilíbrio e a tranquilidade
+                </label>
+            </fieldset>
+
+            <section class="privacy" aria-labelledby="privacidade">
+                <h2 id="privacidade">Termos de Uso e Política de Privacidade</h2>
+
+                <p>
+                    Este é um teste educativo e recreativo, não um
+                    instrumento de diagnóstico psicológico. As respostas
+                    são processadas localmente no navegador para calcular
+                    um resultado ilustrativo.
+                </p>
+
+                <p>
+                    O nome, o e-mail e a data de nascimento são solicitados
+                    apenas para demonstrar os campos do formulário.
+                    Esta versão não envia esses dados para terceiros,
+                    não os guarda num servidor e não os utiliza para
+                    publicidade. Ao atualizar ou fechar a página, os
+                    dados introduzidos deixam de estar disponíveis nesta
+                    sessão do formulário.
+                </p>
+
+                <label class="consent">
+                    <input type="checkbox" id="consentimento"
+                           name="consentimento" required>
+                    <span>
+                        Li e compreendi os Termos de Uso e a Política de
+                        Privacidade acima e aceito o tratamento local das
+                        minhas respostas para calcular o resultado deste
+                        teste. Posso recusar, não assinalando esta caixa.
+                    </span>
+                </label>
+            </section>
+
+            <button type="submit">Ver Resultado</button>
+        </form>
+
+        <section id="resultado" aria-live="polite" tabindex="-1">
+            <h2 id="tituloResultado">O seu resultado</h2>
+            <p id="textoResultado"></p>
+            <p class="nota">
+                Este resultado é apenas indicativo e não representa
+                uma avaliação clínica ou um diagnóstico psicológico.
+            </p>
+        </section>
+
+        <footer>
+            Projeto educativo · Teste de perfil ilustrativo
+        </footer>
+    </main>
+
+    <script>
+        const form = document.getElementById("teste");
+        const resultado = document.getElementById("resultado");
+        const tituloResultado = document.getElementById("tituloResultado");
+        const textoResultado = document.getElementById("textoResultado");
+
+        const perfis = {
+            A: {
+                nome: "O Analista",
+                descricao:
+                    "Valoriza a lógica, a curiosidade e a compreensão " +
+                    "profunda dos problemas. Gosta de explorar ideias " +
+                    "e considerar diferentes possibilidades."
+            },
+            B: {
+                nome: "O Comunicador",
+                descricao:
+                    "Valoriza a comunicação, a colaboração e as relações " +
+                    "interpessoais. Gosta de partilhar ideias e aprender " +
+                    "através do contacto com outras pessoas."
+            },
+            C: {
+                nome: "O Estratega",
+                descricao:
+                    "Valoriza o planeamento, a organização e a concretização " +
+                    "de objetivos. Prefere transformar ideias em ações."
+            },
+            D: {
+                nome: "O Equilibrado",
+                descricao:
+                    "Valoriza a serenidade, a flexibilidade e a harmonia. " +
+                    "Procura adaptar-se às circunstâncias com tranquilidade."
+            }
+        };
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!form.reportValidity()) {
+                return;
+            }
+
+            const contagem = {
+                A: 0,
+                B: 0,
+                C: 0,
+                D: 0
+            };
+
+            for (let i = 1; i <= 5; i++) {
+                const resposta = form.querySelector(
+                    'input[name="p' + i + '"]:checked'
+                );
+
+                if (resposta) {
+                    contagem[resposta.value]++;
+                }
+            }
+
+            const maiorPontuacao = Math.max(...Object.values(contagem));
+
+            const vencedores = Object.keys(contagem).filter(
+                perfil => contagem[perfil] === maiorPontuacao
+            );
+
+            const perfilEscolhido =
+                vencedores[Math.floor(Math.random() * vencedores.length)];
+
+            const perfil = perfis[perfilEscolhido];
+            const nome = document.getElementById("nome").value.trim();
+
+            tituloResultado.textContent =
+                "O seu perfil é: " + perfil.nome;
+
+            textoResultado.textContent =
+                "Olá, " + nome + "! " + perfil.descricao;
+
+            resultado.style.display = "block";
+            resultado.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+            resultado.focus();
+        });
+    </script>
+</body>
+</html>
